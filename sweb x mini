@@ -1,0 +1,165 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local adminfly = Instance.new("TextButton")
+local skinnygod = Instance.new("TextButton")
+local aimlock = Instance.new("TextButton")
+local fakemacro = Instance.new("TextButton")
+local nameofscript = Instance.new("TextLabel")
+local extra = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Frame.BorderColor3 = Color3.fromRGB(36, 36, 36)
+Frame.Position = UDim2.new(0.250602424, 0, 0.268588781, 0)
+Frame.Size = UDim2.new(0, 315, 0, 156)
+Frame.Active = true
+
+adminfly.Name = "admin fly"
+adminfly.Parent = Frame
+adminfly.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+adminfly.BorderColor3 = Color3.fromRGB(40, 40, 40)
+adminfly.Position = UDim2.new(0, 0, 0.212510318, 0)
+adminfly.Size = UDim2.new(0, 315, 0, 21)
+adminfly.Font = Enum.Font.SourceSans
+adminfly.Text = "admin fly"
+adminfly.TextColor3 = Color3.fromRGB(255, 255, 255)
+adminfly.TextScaled = true
+adminfly.TextSize = 14.000
+adminfly.TextWrapped = true
+adminfly.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/22kristina/swag/main/admin_fly'))()
+end)
+
+skinnygod.Name = "skinny god"
+skinnygod.Parent = Frame
+skinnygod.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+skinnygod.BorderColor3 = Color3.fromRGB(40, 40, 40)
+skinnygod.Position = UDim2.new(0, 0, 0.763059735, 0)
+skinnygod.Size = UDim2.new(0, 314, 0, 20)
+skinnygod.Font = Enum.Font.SourceSans
+skinnygod.Text = "skinnyGOD"
+skinnygod.TextColor3 = Color3.fromRGB(255, 255, 255)
+skinnygod.TextScaled = true
+skinnygod.TextSize = 14.000
+skinnygod.TextWrapped = true
+skinnygod.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/Godv3'))()
+end)
+
+aimlock.Name = "aimlock"
+aimlock.Parent = Frame
+aimlock.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+aimlock.BorderColor3 = Color3.fromRGB(40, 40, 40)
+aimlock.Position = UDim2.new(0, 0, 0.385953546, 0)
+aimlock.Size = UDim2.new(0, 315, 0, 21)
+aimlock.Font = Enum.Font.SourceSans
+aimlock.Text = "aimlock"
+aimlock.TextColor3 = Color3.fromRGB(255, 255, 255)
+aimlock.TextScaled = true
+aimlock.TextSize = 14.000
+aimlock.TextWrapped = true
+aimlock.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/emersoncas/new-aimlock/main/aimlock%201",true))();
+end)
+
+fakemacro.Name = "fake macro"
+fakemacro.Parent = Frame
+fakemacro.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+fakemacro.BorderColor3 = Color3.fromRGB(40, 40, 40)
+fakemacro.Position = UDim2.new(0, 0, 0.570568979, 0)
+fakemacro.Size = UDim2.new(0, 314, 0, 21)
+fakemacro.Font = Enum.Font.SourceSans
+fakemacro.Text = "fake macro"
+fakemacro.TextColor3 = Color3.fromRGB(255, 255, 255)
+fakemacro.TextScaled = true
+fakemacro.TextSize = 14.000
+fakemacro.TextWrapped = true
+fakemacro.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/emersoncas/fake-macro/main/fake%20macro",true))();
+end)
+
+nameofscript.Name = "name of script"
+nameofscript.Parent = Frame
+nameofscript.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+nameofscript.BorderColor3 = Color3.fromRGB(40, 40, 40)
+nameofscript.Position = UDim2.new(-0.000191241503, 0, -0.000642031431, 0)
+nameofscript.Size = UDim2.new(0, 315, 0, 25)
+nameofscript.Font = Enum.Font.SourceSans
+nameofscript.Text = "Sweb X mini"
+nameofscript.TextColor3 = Color3.fromRGB(255, 255, 255)
+nameofscript.TextScaled = true
+nameofscript.TextSize = 14.000
+nameofscript.TextWrapped = true
+
+extra.Name = "extra"
+extra.Parent = Frame
+extra.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+extra.BackgroundTransparency = 1.000
+extra.BorderColor3 = Color3.fromRGB(50, 50, 50)
+extra.Position = UDim2.new(0.183840126, 0, 0.897017658, 0)
+extra.Size = UDim2.new(0, 199, 0, 16)
+extra.Font = Enum.Font.SourceSans
+extra.Text = "put in auto execute for godmode to work"
+extra.TextColor3 = Color3.fromRGB(255, 255, 255)
+extra.TextScaled = true
+extra.TextSize = 14.000
+extra.TextWrapped = true
+
+-- Scripts:
+
+local function QQWQMBY_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	-- Draggble
+	-- Credits: Veky
+	
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y), 'Out', 'Linear', 0, true); -- drag speed
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(QQWQMBY_fake_script)()
